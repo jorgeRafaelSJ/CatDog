@@ -1,1 +1,1 @@
-actions.js
+export const TEST = 'TEST';

@@ -2,15 +2,21 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
+import { testRequest } from '../action-creators'
+
 class HomePage extends React.Component {
 	constructor(props) {
 		super(props);
 
 	}
 
+	componentWillMount() {
+		this.props.test();
+	}
+
 	render() {
 		return(
-			<div className="home-page">
+			<div className="hello">
 			Hello World! 
 			</div>
 		);
@@ -24,6 +30,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return { 
+		test: bindActionCreators(testRequest, dispatch)
 	}
 }
 
